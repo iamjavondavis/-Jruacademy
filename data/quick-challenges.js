@@ -1,0 +1,1 @@
+window.QUICK_CHALLENGES = Array.from({length:12},(_,i)=>{const table=i+1;return {id:`q${table}`,table,title:`⚡ ${table} Times Table`,xp:25,questions:Array.from({length:12},(_,j)=>({prompt:`${table} × ${j+1} = ?`,answer:table*(j+1)}))};});
