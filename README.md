@@ -44,13 +44,37 @@ https://iamjavondavis.github.io/Jruacademy/
 - Guided build tasks, starter Lua code, checkpoint quizzes, XP, locked progression, and developer badges
 - Originality and child-safety reminders included throughout
 
+### Academy Worlds
+
+The complete-school expansion adds project-based learning across:
+
+- Math Lab: place value, addition, subtraction, fractions, time, money, measurement, geometry, patterns, and logic
+- Writer's Workshop: sentences, grammar, punctuation, journaling, and storytelling
+- Science Island: plants, weather, matter, and space
+- World Explorer: maps, geography, communities, cultures, and family history
+- Money Mountain: needs and wants, saving, budgeting, banking, and entrepreneurship
+- Code Kingdom: computer parts, algorithms, debugging, Scratch, and internet safety
+- Creative Studio: Apple Freeform, color, shapes, posters, and game storyboards
+- AI Factory: AI basics, prompting, fact-checking, privacy, and safety
+- Life Skills: routines, organization, kitchen math, and public speaking
+- Brain Gym: memory, chess, puzzles, and logic
+- Dad Challenges: weekly real-world family projects
+
+### Learning Hub
+
+- Every Academy Worlds lesson includes a **Watch Example** option.
+- Video links open targeted YouTube searches using trusted educational sources such as Khan Academy, Math Antics, Numberblocks, Homeschool Pop, SciShow Kids, National Geographic Kids, Code.org, Scratch, Apple Support, Canva Design School, and Common Sense Education.
+- Parent approval is required before viewing.
+- Autoplay should be disabled when possible.
+- Jru returns to the Academy to complete a real task after watching.
+
 ### Parent tools
 
 - XP and student levels
 - Badges
 - Best-score and best-time tracking
 - Missed-fact recommendations
-- Math, reading, quick-table, and Roblox course progress
+- Math, reading, quick-table, Roblox, and Academy Worlds progress
 - Dad Dashboard and progress export
 
 ## Content architecture
@@ -61,6 +85,7 @@ The app engine is stored in `index.html`. Lesson content is stored separately:
 - `data/reading-lessons.js`
 - `data/quick-challenges.js`
 - `data/roblox-course.js`
+- `data/academy-expansion.js`
 
 ## Progress storage
 
@@ -72,8 +97,9 @@ Progress is currently saved in the browser using `localStorage`. Progress remain
 - Questions should shuffle each session.
 - Hints should guide thinking without immediately giving away answers.
 - Wrong answers should provide a clear explanation.
+- Videos are references, not substitutes for completing the project or practice.
 - New game projects must use original names, code, artwork, models, and sound or properly licensed assets.
-- Child publishing, chat, privacy, and monetization settings must be reviewed by a parent.
+- Child publishing, chat, privacy, video access, and monetization settings must be reviewed by a parent.
 
 ## Next production upgrades
 
@@ -82,5 +108,5 @@ Progress is currently saved in the browser using `localStorage`. Progress remain
 3. Daily adaptive review using missed facts
 4. Expanded 30-story reading curriculum
 5. Additional Roblox coding projects
-6. Science Island
-7. Weekly progress reports
+6. Weekly progress reports
+7. Parent-managed video library with direct approved links
