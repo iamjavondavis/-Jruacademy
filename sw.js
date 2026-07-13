@@ -1,4 +1,4 @@
-const CACHE='jru-academy-v4';
+const CACHE='jru-academy-v5';
 const CORE=[
   './','./index.html','./manifest.webmanifest','./assets/jru-academy-icon.svg',
   './data/math-lessons.js','./data/reading-lessons.js','./data/quick-challenges.js',
