@@ -31,17 +31,47 @@
   function addStyles(){
     const s=document.createElement('style');
     s.textContent=`
-      #focusView{touch-action:manipulation;-webkit-text-size-adjust:100%}
+      #focusView{touch-action:manipulation;-webkit-text-size-adjust:100%;width:100%;max-width:none;padding-bottom:18px}
+      #focusView>h1{font-size:clamp(24px,5vw,36px);margin:4px 0}
+      #focusView>p{margin:4px auto 10px;max-width:720px;font-size:14px}
+      #focusView .focus-wrap{display:flex!important;flex-direction:column!important;align-items:center!important;gap:10px!important;width:100%!important}
+      #focusView .focus-wrap>div:first-child{width:100%;display:flex;flex-direction:column;align-items:center}
+      #focusView .focus-board{height:clamp(420px,68dvh,760px)!important;width:auto!important;max-width:94vw!important;aspect-ratio:10/18!important;margin:0 auto!important;padding:6px!important;border-radius:14px!important}
       #focusView .focus-board,#focusView .focus-controls,#focusView .focus-controls button{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
-      #focusView .focus-controls button{min-width:64px;min-height:58px;font-size:24px}
+      #focusView .focus-controls{grid-template-columns:repeat(3,minmax(68px,84px))!important;gap:9px!important;margin-top:9px!important}
+      #focusView .focus-controls button{width:100%;min-width:68px;min-height:60px;font-size:27px;margin:0!important}
+      #focusView .focus-panel{width:min(94vw,620px)!important;padding:10px 12px!important;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:center}
+      #focusView .focus-panel h2{display:none}
+      #focusView .focus-panel .big{font-size:18px!important;margin:0;text-align:center}
+      #focusView .focus-panel>p:not(.focus-tip){margin:0;text-align:center;font-size:14px}
+      #focusView .focus-panel>button{min-height:44px;margin:0!important;padding:8px 10px!important}
+      #focusView .focus-panel .focus-extra-stats{grid-column:1/-1;margin:0;grid-template-columns:repeat(2,1fr)}
+      #focusView .focus-panel #focusMessage{grid-column:1/-1;margin:0;padding:8px;font-size:13px;text-align:center}
+      #focusView .focus-panel .focus-tip:last-child{display:none}
       #focusView .focus-board.line-flash{animation:focusFlash .42s ease}
       #focusView .focus-board.block-pop{animation:blockPop .18s ease}
       #focusView .focus-cell.filled{transition:transform .12s ease,filter .12s ease}
       #focusView .focus-cell.filled:nth-child(3n){filter:brightness(1.15)}
       .focus-extra-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
-      .focus-stat-box{background:#071a33;border:1px solid #1d74d7;border-radius:12px;padding:10px;text-align:center}
+      .focus-stat-box{background:#071a33;border:1px solid #1d74d7;border-radius:10px;padding:7px;text-align:center;font-size:13px}
       @keyframes focusFlash{0%{filter:brightness(1)}45%{filter:brightness(2);box-shadow:0 0 45px #ef233c}100%{filter:brightness(1)}}
       @keyframes blockPop{0%{transform:scale(.985)}100%{transform:scale(1)}}
+      @media(max-width:700px){
+        main{padding-left:6px!important;padding-right:6px!important}
+        #focusView{margin-top:-8px}
+        #focusView>button:first-child{padding:8px 11px!important;margin-bottom:1px!important}
+        #focusView>p{font-size:12px;line-height:1.3;margin-bottom:6px}
+        #focusView .focus-board{height:min(69dvh,680px)!important;min-height:420px!important;max-width:96vw!important}
+        #focusView .focus-panel{grid-template-columns:repeat(3,1fr);width:96vw!important}
+        #focusView .focus-panel .focus-extra-stats{grid-column:1/-1}
+        #focusView .focus-panel #focusMessage{grid-column:1/-1}
+        .sound-toggle{bottom:8px!important;right:8px!important}
+      }
+      @media(max-height:700px){
+        #focusView>p{display:none}
+        #focusView .focus-board{height:61dvh!important;min-height:360px!important}
+        #focusView .focus-controls button{min-height:52px!important}
+      }
     `;
     document.head.appendChild(s);
   }
