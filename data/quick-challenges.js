@@ -59,7 +59,7 @@ window.QUICK_CHALLENGES = Array.from({length:12},(_,i)=>{const table=i+1;return 
       const card=document.createElement('div');
       card.id='matchHomeCard';
       card.className='card';
-      card.innerHTML='<h2>🧠 Memory Match</h2><p>Match multiplication problems with their answers.</p><p class="muted" id="matchBestHome">Best result: not played</p>';
+      card.innerHTML='<h2>🧠 Memory Match</h2><p>Match each math problem with its answer.</p><p class="muted" id="matchBestHome">Best score: not played</p>';
       homeGrid.insertBefore(card,homeGrid.lastElementChild);
     }
 
@@ -70,7 +70,7 @@ window.QUICK_CHALLENGES = Array.from({length:12},(_,i)=>{const table=i+1;return 
       section.innerHTML=`
         <button class="secondary" onclick="show('homeView')">Home</button>
         <h1>🧠 Multiplication Memory Match</h1>
-        <p>Turn over two cards. Match each multiplication problem with its answer.</p>
+        <p>Turn over two cards. Match the math problem with the right answer.</p>
         <div class="card">
           <div class="match-stats">
             <span class="pill">Moves: <b id="matchMoves">0</b></span>
@@ -87,7 +87,7 @@ window.QUICK_CHALLENGES = Array.from({length:12},(_,i)=>{const table=i+1;return 
 
   function updateBestText(){
     const best=JSON.parse(localStorage.getItem('jruMatchBest')||'null');
-    const text=best?`Best: ${best.moves} moves in ${best.seconds}s`:'Best result: not played';
+    const text=best?`Best: ${best.moves} moves in ${best.seconds}s`:'Best score: not played';
     const home=document.getElementById('matchBestHome');
     if(home) home.textContent=text;
   }
@@ -128,7 +128,7 @@ window.QUICK_CHALLENGES = Array.from({length:12},(_,i)=>{const table=i+1;return 
     if(cards[first].pair===cards[second].pair){
       cards[first].matched=cards[second].matched=true;
       matches++;first=null;second=null;locked=false;
-      document.getElementById('matchMessage').textContent='✅ Match found!';
+      document.getElementById('matchMessage').textContent='✅ You found a match!';
       if(window.jruPlaySound)window.jruPlaySound('match');
       render();
       if(matches===6){
@@ -137,12 +137,12 @@ window.QUICK_CHALLENGES = Array.from({length:12},(_,i)=>{const table=i+1;return 
         const current={moves,seconds};
         const old=JSON.parse(localStorage.getItem('jruMatchBest')||'null');
         if(!old||moves<old.moves||(moves===old.moves&&seconds<old.seconds))localStorage.setItem('jruMatchBest',JSON.stringify(current));
-        document.getElementById('matchMessage').textContent=`🏆 All pairs matched in ${moves} moves and ${seconds} seconds!`;
+        document.getElementById('matchMessage').textContent=`🏆 You found all the pairs in ${moves} moves and ${seconds} seconds!`;
         if(window.jruPlaySound)window.jruPlaySound('reward');
         updateBestText();
       }
     }else{
-      document.getElementById('matchMessage').textContent='Not a match—remember where those cards are.';
+      document.getElementById('matchMessage').textContent='Not a match. Try to remember where the cards are.';
       if(window.jruPlaySound)window.jruPlaySound('wrong');
       setTimeout(()=>{
         cards[first].open=false;cards[second].open=false;first=null;second=null;locked=false;render();
@@ -171,6 +171,20 @@ window.QUICK_CHALLENGES = Array.from({length:12},(_,i)=>{const table=i+1;return 
 (function loadUIUpgrade(){
   const script=document.createElement('script');
   script.src='data/ui-upgrade.js';
+  script.defer=true;
+  document.head.appendChild(script);
+})();
+
+(function loadAvatarStudio(){
+  const script=document.createElement('script');
+  script.src='data/avatar-studio.js';
+  script.defer=true;
+  document.head.appendChild(script);
+})();
+
+(function loadKidLanguage(){
+  const script=document.createElement('script');
+  script.src='data/kid-language.js';
   script.defer=true;
   document.head.appendChild(script);
 })();
