@@ -26,6 +26,14 @@ https://iamjavondavis.github.io/Jruacademy/
 - Hint button, answer explanations, timer, best-time tracking, XP, and badges
 - Mastery requires at least 10 correct answers out of 12
 
+### Multiplication Memory Match
+
+- Six randomized pairs per round
+- Match each multiplication fact with its product
+- Tracks moves and elapsed time
+- Saves the best result on the current device
+- Mobile-friendly three- or four-column card layout
+
 ### Reading Forest
 
 - 10 reading-comprehension stories and 40 questions
@@ -58,7 +66,7 @@ The complete-school expansion adds project-based learning across:
 - AI Factory: AI basics, prompting, fact-checking, privacy, and safety
 - Life Skills: routines, organization, kitchen math, and public speaking
 - Brain Gym: memory, chess, puzzles, and logic
-- Dad Challenges: weekly real-world family projects
+- Parent Challenges: weekly real-world family projects
 
 ### Learning Hub
 
@@ -74,8 +82,8 @@ The complete-school expansion adds project-based learning across:
 - Badges
 - Best-score and best-time tracking
 - Missed-fact recommendations
-- Math, reading, quick-table, Roblox, and Academy Worlds progress
-- Dad Dashboard and progress export
+- Math, reading, quick-table, Roblox, Academy Worlds, and Memory Match progress
+- Parents Dashboard and progress export
 
 ## Content architecture
 
