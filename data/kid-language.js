@@ -58,3 +58,10 @@ new MutationObserver(()=>simplify()).observe(document.documentElement,{childList
   script.defer=true;
   document.head.appendChild(script);
 })();
+
+(function loadBlockFocusPolish(){
+  const script=document.createElement('script');
+  script.src='data/block-focus-polish.js';
+  script.defer=true;
+  document.head.appendChild(script);
+})();
