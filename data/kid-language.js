@@ -44,3 +44,10 @@ new MutationObserver(()=>simplify()).observe(document.documentElement,{childList
   script.defer=true;
   document.head.appendChild(script);
 })();
+
+(function loadGarageBandWorkflow(){
+  const script=document.createElement('script');
+  script.src='data/garageband-launch.js';
+  script.defer=true;
+  document.head.appendChild(script);
+})();
